@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "book-management-api",
+		"name": "Book Management API",
+		"description": "Complete REST API collection for Book Management System with Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. GET All Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Lấy danh sách tất cả các sách trong hệ thống"
+			},
+			"response": []
+		},
+		{
+			"name": "2. GET Book by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				},
+				"description": "Lấy thông tin chi tiết của một cuốn sách theo ID"
+			},
+			"response": []
+		},
+		{
+			"name": "3. POST Create New Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Spring Boot in Action\",\n  \"author\": \"Craig Walls\",\n  \"edition\": 3,\n  \"publisher\": \"Manning Publications\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Tạo một cuốn sách mới. ID sẽ được tự động tạo bởi server."
+			},
+			"response": []
+		},
+		{
+			"name": "4. POST Create Book - Example 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\",\n  \"edition\": 1,\n  \"publisher\": \"Prentice Hall\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Tạo sách thứ 2 - Clean Code"
+			},
+			"response": []
+		},
+		{
+			"name": "5. POST Create Book - Example 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Effective Java\",\n  \"author\": \"Joshua Bloch\",\n  \"edition\": 3,\n  \"publisher\": \"Addison-Wesley\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Tạo sách thứ 3 - Effective Java"
+			},
+			"response": []
+		},
+		{
+			"name": "6. PUT Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Spring Boot in Action - Updated Edition\",\n  \"author\": \"Craig Walls\",\n  \"edition\": 4,\n  \"publisher\": \"Manning Publications Co.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				},
+				"description": "Cập nhật thông tin sách có ID = 1. Thay đổi ID trong URL để update sách khác."
+			},
+			"response": []
+		},
+		{
+			"name": "7. PUT Update Book - Example 2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Clean Code - A Handbook of Agile Software Craftsmanship\",\n  \"author\": \"Robert C. Martin (Uncle Bob)\",\n  \"edition\": 2,\n  \"publisher\": \"Prentice Hall PTR\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"2"
+					]
+				},
+				"description": "Cập nhật sách có ID = 2"
+			},
+			"response": []
+		},
+		{
+			"name": "8. DELETE Book by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"3"
+					]
+				},
+				"description": "Xóa sách có ID = 3. Thay đổi ID trong URL để xóa sách khác."
+			},
+			"response": []
+		},
+		{
+			"name": "9. DELETE Book - Example 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				},
+				"description": "Xóa sách có ID = 1"
+			},
+			"response": []
+		}
+	]
+}
