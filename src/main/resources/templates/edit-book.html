@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{_layout}">
+<head>
+    <title>Sửa Sách</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h1 class="page-title">✏️ Sửa Sách</h1>
+        
+        <form th:action="@{/books/edit}" method="post" th:object="${book}" class="row g-3">
+            <!-- Hidden field for ID -->
+            <input type="hidden" th:field="*{id}" />
+            
+            <div class="col-md-6">
+                <label for="title" class="form-label">Tiêu đề:</label>
+                <input type="text" id="title" th:field="*{title}" class="form-control" 
+                       placeholder="Nhập tiêu đề sách" required>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="author" class="form-label">Tác giả:</label>
+                <input type="text" id="author" th:field="*{author}" class="form-control" 
+                       placeholder="Nhập tên tác giả" required>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="edition" class="form-label">Phiên bản:</label>
+                <input type="number" id="edition" th:field="*{edition}" class="form-control" 
+                       placeholder="Nhập số phiên bản" min="1">
+            </div>
+            
+            <div class="col-md-6">
+                <label for="publisher" class="form-label">Nhà xuất bản:</label>
+                <input type="text" id="publisher" th:field="*{publisher}" class="form-control" 
+                       placeholder="Nhập nhà xuất bản">
+            </div>
+            
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary">
+                    💾 Cập nhật
+                </button>
+                <a th:href="@{/books}" class="btn btn-secondary ms-2">
+                    ↩️ Quay lại
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

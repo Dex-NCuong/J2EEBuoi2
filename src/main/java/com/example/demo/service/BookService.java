@@ -13,6 +13,16 @@ public class BookService {
     private List<Book> books = new ArrayList<>();
     private int nextId = 1;
     
+    // Constructor - Khởi tạo dữ liệu sách mẫu
+    public BookService() {
+        // Thêm sách mẫu
+        addBook(new Book(null, "Spring Boot", "Huy Cuong", 1, "NXB Trẻ"));
+        addBook(new Book(null, "Spring Boot V2", "Anh", 2, "NXB Kim Đồng"));
+        addBook(new Book(null, "Java Programming", "Nguyễn Văn A", 3, "NXB Giáo Dục"));
+        addBook(new Book(null, "Web Development with Thymeleaf", "Trần Thị B", 1, "NXB Lao Động"));
+        addBook(new Book(null, "Microservices Architecture", "Lê Văn C", 2, "NXB Thông Tin"));
+    }
+    
     // Get all books
     public List<Book> getAllBooks() {
         return new ArrayList<>(books);
